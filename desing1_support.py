@@ -6,6 +6,7 @@
 #    Apr 01, 2026 10:34:34 PM CST  platform: Windows NT
 
 import sys
+import time
 import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter.constants import *
@@ -96,7 +97,7 @@ def enviar_mensaje():
                 _i = 0
                 _w1.Text1.delete("1.0", tk.END)
                 _w1.Text2.delete("1.0", tk.END)
-                _w1.mensaje_var.set("¿Cómo te llamas?")
+                root.after(1000,_w1.mensaje_var.set,"¿Cómo te llamas?")
                 _w1.Text2.insert("1.0", "esperando tu orden..\n")
             case _:
                 _w1.mensaje_var.set("dato no valido, el programa ha fallado.")
