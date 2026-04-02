@@ -58,30 +58,32 @@ def enviar_mensaje():
                   _i = 2
             case 2:
                 if texto_ingresado.lower() == "si" :
-                  _w1.Text2.insert(tk.END,"He untado mayonesa con el cuchillo\n")
+                  _w1.Text2.insert(tk.END,"He untado mayonesa con el cuchillo 🔪\n")
                 
-                _w1.Text2.insert(tk.END,"He colocado el jamón\n")
+                _w1.Text2.insert(tk.END,"He colocado el jamón 🦃\n")
                 _w1.mensaje_var.set("¿Quiere tocino? si/no")
                 _i = 3 
             case 3:
                 if texto_ingresado.lower() == "si" :
-                  _w1.Text2.insert(tk.END,"He agregado tocino\n")
+                  _w1.Text2.insert(tk.END,"He agregado tocino 🥓\n")
                 _w1.mensaje_var.set("¿Quiere Lechuga? si/no")
                 _i = 4               
             case 4:
                 if texto_ingresado.lower() == "si" :
-                  _w1.Text2.insert(tk.END,"He agregado Lechuga\n")
+                  _w1.Text2.insert(tk.END,"He agregado Lechuga 🥬\n")
                 _w1.mensaje_var.set("¿Quiere queso amarillo? si/no")
                 _i = 5               
             case 5:
                 if texto_ingresado.lower() == "si" :
-                  _w1.Text2.insert(tk.END,"He agregado queso amarillo\n")
+                  _w1.Text2.insert(tk.END,"He agregado queso amarillo 🧀\n")
                 _w1.mensaje_var.set("¿Quiere jitomate? si/no")
                 _i = 6
             case 6:
                 if texto_ingresado.lower() == "si" :
-                  _w1.Text2.insert(tk.END,"He agregado jitomate\n")
-                _w1.Text2.insert(tk.END,"Colocamos la tapa del sandwich\n")
+                  _w1.Text2.insert(tk.END,"He agregado jitomate 🍅\n")
+                _w1.Text2.insert(tk.END,"Colocamos la tapa del sandwich 🥪\n")
+                _w1.Text2.insert(tk.END,"---\n")
+                _w1.Text2.insert(tk.END,"Costo Total...........$60 MXN 💸\n")
                 _w1.mensaje_var.set("¿Quieres otro sandwich? si/no")
                 _w1.Text2.insert(tk.END,f"¡Gracias nos vemos pronto {_nameUser}!\n")
                 _i = 7
