@@ -13,11 +13,13 @@ from tkinter.constants import *
 import desing1
 
 _debug = True # False to eliminate debug printing from callback functions.
-_i = 0 
+_i = 0
+_nameUser = '' 
 
 # --- CAMBIO 4: Creamos la función para enviar el mensaje ---
 def enviar_mensaje():
     global _i
+    global _nameUser
     if _debug:
         print('Botón Enviar presionado...')
     
@@ -30,9 +32,10 @@ def enviar_mensaje():
     if texto_ingresado:
         # 2. Actualizamos la variable del Message1 con el texto obtenido
         if _i == 0:
-          aux_text=f"Hola {texto_ingresado}!\n\n"
+          _nameUser=texto_ingresado
+          aux_text=f"Hola {texto_ingresado}!\n"
         else:
-          aux_text=f"{texto_ingresado}\n\n"
+          aux_text=f"{texto_ingresado}\n"
         _w1.Text2.insert(tk.END,aux_text)
         
         # 3. Limpiamos la caja de texto para el siguiente mensaje
@@ -48,10 +51,50 @@ def enviar_mensaje():
                   _w1.Text1.delete("1.0", tk.END)
                   _w1.Text2.delete("1.0", tk.END)
                   _w1.mensaje_var.set("¿Cómo te llamas?")
-                  _w1.Text2.insert("1.0", "esperando tu orden..\n\n")
+                  _w1.Text2.insert("1.0", "esperando tu orden..\n")
                 else:
+                  _w1.Text2.insert(tk.END,"Preparando sandwich\n")
                   _w1.mensaje_var.set("¿Tu sandwich llevará mayonesa? si/no")
                   _i = 2
+            case 2:
+                if texto_ingresado.lower() == "si" :
+                  _w1.Text2.insert(tk.END,"He untado mayonesa con el cuchillo\n")
+                
+                _w1.Text2.insert(tk.END,"He colocado el jamón\n")
+                _w1.mensaje_var.set("¿Quiere tocino? si/no")
+                _i = 3 
+            case 3:
+                if texto_ingresado.lower() == "si" :
+                  _w1.Text2.insert(tk.END,"He agregado tocino\n")
+                _w1.mensaje_var.set("¿Quiere Lechuga? si/no")
+                _i = 4               
+            case 4:
+                if texto_ingresado.lower() == "si" :
+                  _w1.Text2.insert(tk.END,"He agregado Lechuga\n")
+                _w1.mensaje_var.set("¿Quiere queso amarillo? si/no")
+                _i = 5               
+            case 5:
+                if texto_ingresado.lower() == "si" :
+                  _w1.Text2.insert(tk.END,"He agregado queso amarillo\n")
+                _w1.mensaje_var.set("¿Quiere jitomate? si/no")
+                _i = 6
+            case 6:
+                if texto_ingresado.lower() == "si" :
+                  _w1.Text2.insert(tk.END,"He agregado jitomate\n")
+                _w1.Text2.insert(tk.END,"Colocamos la tapa del sandwich\n")
+                _w1.mensaje_var.set("¿Quieres otro sandwich? si/no")
+                _w1.Text2.insert(tk.END,f"¡Gracias nos vemos pronto {_nameUser}!\n")
+                _i = 7
+            case 7:
+                if texto_ingresado.lower() == "no" :
+                  _w1.mensaje_var.set("Gracias por usar este programa")
+                else:
+                  _w1.mensaje_var.set("Preparando todo")
+                _i = 0
+                _w1.Text1.delete("1.0", tk.END)
+                _w1.Text2.delete("1.0", tk.END)
+                _w1.mensaje_var.set("¿Cómo te llamas?")
+                _w1.Text2.insert("1.0", "esperando tu orden..\n")
             case _:
                 _w1.mensaje_var.set("dato no valido, el programa ha fallado.")
                 if _debug:
