@@ -62,21 +62,25 @@ def enviar_mensaje():
                   _w1.Text2.insert(tk.END,"He untado mayonesa con el cuchillo 🔪\n")
                 
                 _w1.Text2.insert(tk.END,"He colocado el jamón 🦃\n")
+                _w1.Text2.see(tk.END)
                 _w1.mensaje_var.set("¿Quiere tocino? si/no")
                 _i = 3 
             case 3:
                 if texto_ingresado.lower() == "si" :
                   _w1.Text2.insert(tk.END,"He agregado tocino 🥓\n")
+                  _w1.Text2.see(tk.END)
                 _w1.mensaje_var.set("¿Quiere Lechuga? si/no")
                 _i = 4               
             case 4:
                 if texto_ingresado.lower() == "si" :
                   _w1.Text2.insert(tk.END,"He agregado Lechuga 🥬\n")
+                  _w1.Text2.see(tk.END)
                 _w1.mensaje_var.set("¿Quiere queso amarillo? si/no")
                 _i = 5               
             case 5:
                 if texto_ingresado.lower() == "si" :
                   _w1.Text2.insert(tk.END,"He agregado queso amarillo 🧀\n")
+                  _w1.Text2.see(tk.END)
                 _w1.mensaje_var.set("¿Quiere jitomate? si/no")
                 _i = 6
             case 6:
