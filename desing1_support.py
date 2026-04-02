@@ -112,6 +112,8 @@ def enviar_mensaje():
         # Si el usuario presiona el botón sin escribir nada
         _w1.mensaje_var.set("Por favor, escribe algo antes de enviar.")
         # _w1.Text2.delete("1.0", tk.END)
+    # esto ayuda para evitar que en Text1 agregue lineas no necesarias
+    return "break"
 
 
 def main(*args):

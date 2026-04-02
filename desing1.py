@@ -72,6 +72,7 @@ class Toplevel1:
         self.Text1.configure(selectbackground="#d9d9d9")
         self.Text1.configure(selectforeground="black")
         self.Text1.configure(wrap="word")
+        self.Text1.bind("<Return>", lambda event: desing1_support.enviar_mensaje())
 
         self.Button1 = tk.Button(self.top)
         self.Button1.place(relx=0.633, rely=0.333, height=26, width=47)
