@@ -86,6 +86,7 @@ def enviar_mensaje():
                 _w1.Text2.insert(tk.END,"Costo Total...........$60 MXN 💸\n")
                 _w1.mensaje_var.set("¿Quieres otro sandwich? si/no")
                 _w1.Text2.insert(tk.END,f"¡Gracias nos vemos pronto {_nameUser}!\n")
+                _w1.Text2.see(tk.END)
                 _i = 7
             case 7:
                 if texto_ingresado.lower() == "no" :
