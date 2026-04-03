@@ -17,6 +17,10 @@ This application is a demo app to teach "Introducción a la programación" with 
 ## How to use ❓
 
 Install a stable Python verison
+pip install pyinstaller
+
+compile:
+pyinstaller --onefile --add-data ".\sandwich.png;." .\desing1.py
 
 On Windows Run on CLI:
 .\dist\desing1.exe
