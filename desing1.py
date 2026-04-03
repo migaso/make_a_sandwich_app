@@ -12,6 +12,7 @@ from tkinter.constants import *
 import os.path
 
 _location = os.path.dirname(__file__)
+_locationImg = os.path.dirname(os.path.abspath(__file__))
 
 import desing1_support
 
@@ -38,15 +39,31 @@ class Toplevel1:
         self.top = top
 
         self.Label1 = tk.Label(self.top)
-        self.Label1.place(relx=0.233, rely=0.067, height=51, width=324)
+        self.Label1.place(relx=0.5, rely=0.067, height=51, width=324, anchor='center')
+        # self.Label1.pack(expand=True)
         self.Label1.configure(activebackground="#d9d9d9")
         self.Label1.configure(activeforeground="black")
-        self.Label1.configure(compound='left')
+        # self.Label1.configure(compound='center')
         self.Label1.configure(disabledforeground="#b4b4b4")
         self.Label1.configure(font="-family {Impact} -size 16")
         self.Label1.configure(foreground="#517ef9")
         self.Label1.configure(highlightcolor="SystemWindowText")
         self.Label1.configure(text='''¡Bienvenido!''')
+
+        self.Label2 = tk.Label(self.top)
+        self.Label2.place(relx=0.017, rely=0.022, height=63, width=63)
+        self.Label2.configure(activebackground="#d9d9d9")
+        self.Label2.configure(activeforeground="black")
+        self.Label2.configure(disabledforeground="#b4b4b4")
+        self.Label2.configure(foreground="black")
+        self.Label2.configure(highlightcolor="SystemWindowText")
+        photo_location = os.path.join(_locationImg,"sandwich.png")
+        global _img0
+        _img0 = tk.PhotoImage(file=photo_location)
+        self.Label2.configure(image=_img0)
+        self.Label2.configure(justify='left')
+        self.Label2.configure(text='''Label''')
+        self.Label2.configure(wraplength="100")
 
         self.Message1 = tk.Message(self.top)
         self.Message1.place(relx=0.3, rely=0.222, relheight=0.042, relwidth=0.417)
